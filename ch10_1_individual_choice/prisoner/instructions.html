@@ -1,0 +1,39 @@
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+    <h3>
+        実験の説明
+    </h3>
+
+    <p>
+        この実験では、あなたは無作為に、匿名で別の参加者とペアにされます。<br>
+        参加者一人一人が同時にかつ秘密裏に「協力する」か「裏切る」かを選択します。<br>
+        あなたの利得は、以下のように両者の選択によって決まります。
+    </p>
+    <p>各セルにおいて左側はあなたの利得を、右側は相手の利得を示しています。</p>
+
+    <table class='table table-bordered text-center'
+           style='width: auto; margin: auto'>
+        <tr>
+            <th colspan=2 rowspan=2></th>
+            <th colspan=2>相手</th>
+        </tr>
+        <tr>
+            <th>協力する</th>
+            <th>裏切る</th>
+        </tr>
+        <tr>
+            <th rowspan=2><span style="transform: rotate(-90deg);">あなた</span></th>
+            <th>協力する</th>
+            <td>{{ C.PAYOFF_B }}, {{ C.PAYOFF_B }}</td>
+            <td>0, {{ C.PAYOFF_A }}</td>
+        </tr>
+        <tr>
+            <th>裏切る</th>
+            <td>{{ C.PAYOFF_A }}, 0</td>
+            <td>{{ C.PAYOFF_C }}, {{ C.PAYOFF_C }}</td>
+        </tr>
+    </table>
+
+</div>
+</div>

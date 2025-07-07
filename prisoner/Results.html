@@ -1,0 +1,18 @@
+{{ block title }}結果{{ endblock }}
+{{ block content }}
+
+    <p>
+        {{ if same_choice }}
+            あなたたちは両方、「{{ my_decision }}」を選択しました。
+        {{ else }}
+            あなたは「{{ my_decision }}」を選択し、相手は「{{ opponent_decision }}」を選択しました。
+        {{ endif }}
+    </p>
+
+    <p>
+        結果としてあなたは{{ player.payoff }}を獲得しました。
+    </p>
+
+    {{ next_button }}
+
+{{ endblock }}

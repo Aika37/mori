@@ -1,0 +1,35 @@
+{{ block title }}あなたの選択{{ endblock }}
+{{ block content }}
+
+    <div class="form-group required">
+        <table class="table table-bordered text-center" style="width: auto; margin: auto">
+            <tr>
+                <th colspan="2" rowspan="2"></th>
+                <th colspan="2">相手</th>
+            </tr>
+            <tr>
+                <th>協力する</th>
+                <th>裏切る</th>
+            </tr>
+            <tr>
+                <th rowspan="2"><span>あなた</span></th>
+                <td><button name="cooperate" value="True" class="btn btn-primary btn-large">協力する</button></td>
+                <td>{{C.PAYOFF_B}}, {{C.PAYOFF_B}}</td>
+                <td>{{ C.PAYOFF_D }}, {{C.PAYOFF_A}}</td>
+            </tr>
+            <tr>
+                <td><button name="cooperate" value="False" class="btn btn-primary btn-large">裏切る</button></td>
+                <td>{{C.PAYOFF_A}}, {{ C.PAYOFF_D }}</td>
+                <td>{{C.PAYOFF_C}}, {{C.PAYOFF_C}}</td>
+            </tr>
+        </table>
+    </div>
+
+{% if player.round_number == 2 %}
+    <p>ここで、他の参加者とチャットできます。</p>
+
+    {{ chat }}
+{% endif %}
+
+
+{{ endblock }}
